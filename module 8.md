@@ -15,21 +15,76 @@ Algorithm:
 4.	Exit the program.
  
 Program:
+```
+#include<stdio.h> 
+#include<math.h> 
+int main() 
+{ 
+int n; 
+scanf("%d",&n)
+ ; 
+if(n>=1 && n<=pow(4,3)) 
+{ 
+switch(n) 
+{ 
+case 5: 
+{ 
+printf("seventy one"); 
+break; 
+} 
+case 6: 
+{ 
+printf("seventy two"); 
+break; 
+} 
+case 13: 
+{ 
+printf("seventy three"); 
+break; 
+} 
+case 14: 
+{ 
+printf("seventy four"); 
+break; 
+} 
+case 15: 
+{ 
+printf("seventy five"); 
+break; 
+} 
+case 16: 
+{ 
+printf("seventy six"); 
+break; 
+} 
+case 5: 
+{ 
+printf("seventy seven"); 
+break; 
+}
+case 6: 
+{ 
+printf("seventy eight"); 
+break; 
+} 
+case 13: 
+{ 
+printf("seventy nine"); 
+break; 
+} 
+default: 
+{ 
+printf("Greater than 13"); 
+} 
+} 
+} 
+}
 
-//type your code here
-
-
-
+```
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+<img width="500" height="194" alt="493267890-c76f1c3c-9949-4663-bb21-9d3db16504c5" src="https://github.com/user-attachments/assets/ff017220-625d-4e3b-b5dc-9d9c795ba57f" />
 
 Result:
 Thus, the program is verified successfully
@@ -46,21 +101,37 @@ Algorithm:
 6.	End
  
 Program:
-
-//type your code here
+```
+#include<stdio.h> 
+#include<string.h> 
+int main() 
+{ 
+char a[50]; 
+scanf("%s",a); 
+int l=strlen(a); 
+char h='0'; 
+for(int i=0;i<4;i++) 
+{ 
+int c=0; 
+for(int j=0;j<l;j++) 
+{ 
+if(a[j]==h) 
+{ 
+c+=1; 
+} 
+} 
+printf("%d ",c); 
+h++; 
+} 
+}
+```
 
 
 
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+<img width="628" height="169" alt="493268043-e398fe66-8c5a-48c7-8b54-5983e3cc163d" src="https://github.com/user-attachments/assets/23befb5c-1597-4eb7-9b84-536a39cd5bb4" />
 
 Result:
 Thus, the program is verified successfully
@@ -83,21 +154,72 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
-
-//type your code here
+```
+#include<stdio.h> 
+#include<string.h> 
+#include<stdlib.h> 
+int next_per(int n, char **s) 
+{ 
+for(int i = n - 1 ; i > 0 ; i--) if(strcmp(s[i],s[i-1]) > 
+0) 
+{ 
+int j=i+1; 
+for(;j<n;j++) if (strcmp(s[j],s[i-1])<=0) 
+break; char *t=s[i-1]; 
+s[i-1]=s[j-1]; 
+s[j-1]=t; 
+for(;i<n-1;i++,n--) 
+{ 
+t=s[i]; 
+s[i]=s[n
+1]; s[n
+1]=t; 
+} 
+return 1; 
+} 
+for(int i=0;i<n-1;i++,n--) 
+{ 
+char 
+*t=s[i]; 
+s[i]=s[n-1]; 
+s[n-1]=t; 
+} 
+return 0; 
+} 
+int main() 
+{ 
+char **s; 
+int n; 
+scanf("%d",&n); 
+s=calloc(n,sizeof(char*)); 
+for(int i=0;i<n;i++) 
+{ 
+s[i]=calloc(n,sizeof(char*)*5); 
+scanf("%s",s[i]); 
+} 
+do 
+{ 
+for(int i=0;i<n;i++) 
+printf("%s%c",s[i],i==n-1?'\n':' 
+'); 
+} 
+while(next_per(n,s)); 
+{ 
+for(int 
+i=0;i<n;i++) free 
+(s[i]); 
+free(s); 
+return 0; 
+} 
+} 
+```
 
 
 
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+<img width="392" height="330" alt="493268229-d32206b0-7840-41ae-b107-eec879fac59b" src="https://github.com/user-attachments/assets/909026b0-2446-4841-8885-4ab1ec89569f" />
 
 Result:
 Thus, the program is verified successfully
@@ -116,21 +238,33 @@ Algorithm:
 7.	End
  
 Program:
-
-//type your code here
-
-
-
+```
+#include<stdio.h> 
+int main() 
+{ 
+int n,i,j,min; 
+scanf("%d",&n)
+ ; 
+int len=n*2-1; 
+for 
+(i=0;i<len;i++) 
+{ 
+for (j=0;j<len;j++) 
+{ 
+min=i<j?i:j; 
+min=min<len-i-1?min:len-1-i; 
+min=min<len-j-1?min:len-1-j; 
+printf("%d ",n-min); 
+} 
+printf("\n"); 
+} 
+return 0; 
+}
+```
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+<img width="707" height="581" alt="493268375-da048dca-1665-419e-87aa-6c8f806dda2b" src="https://github.com/user-attachments/assets/7ea97a0e-d13c-4973-8f19-f48b2f2b0568" />
 
 Result:
 Thus, the program is verified successfully
@@ -155,43 +289,31 @@ o	Call the square() function and display the result.
 5.	End.
 
 Program:
-
-//type your code here
-
+```
+ 
+#include <stdio.h> 
+void square(); 
+int main(){ 
+     
+    square(); 
+    return 0; 
+} 
+void square(){ 
+    int a; 
+    scanf("%d",&a); 
+    float ans = a*a; 
+    printf("The square of %d is : %.2f",a,ans); 
+}
+```
 
 
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+<img width="799" height="270" alt="493268520-9c9c96bc-3f16-48e3-8d34-df9083ab32be" src="https://github.com/user-attachments/assets/c86d7882-3cdb-4899-996e-717db1e70050" />
 
 Result:
 Thus, the program is verified successfully
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
